@@ -1,4 +1,4 @@
-# ID2203 Project 2018 Starter Code for Kompics Scala
+# Distributed Key-Value Store Code for Kompics Scala
 
 This project contains some code to get you started with the project.
 You are encouraged to create your own forks and work on them, modifying everything and anything as you desire it.
