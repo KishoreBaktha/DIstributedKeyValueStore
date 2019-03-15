@@ -79,3 +79,5 @@ java -jar client/target/scala-2.12/client.jar -p 56787 -s <bsip>:<bsport>
 Again, make sure not to double allocate ports on the same machine.
 
 The client will attempt to contact the bootstrap server and give you a small command promt if successful. Type `help` to see the available commands.
+
+<img width="1042" alt="Screenshot 2019-03-15 at 2 33 08 PM" src="https://user-images.githubusercontent.com/26774442/54435428-bf009700-4730-11e9-926e-9e2f09596266.png">
