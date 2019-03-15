@@ -1,0 +1,51 @@
+#!/bin/bash
+
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+osascript -e '
+    tell application "Terminal"
+        tell front window
+            set bounds to (1500, 0, 1800, 600)
+        end tell
+        do script "cd '"$PWD"' && java -jar server/target/scala-2.12/server.jar -p 45678"
+        tell front window
+            set custom title to "Bootstrap Server - 45678"
+            set bounds to (0, 0, 500, 600)
+        end tell
+
+        do script "cd '"$PWD"' && java -jar server/target/scala-2.12/server.jar -p 45680 -s localhost:45678"
+        tell front window
+            set custom title to "Server - 45680"
+            set bounds to (500, 0, 1000, 600)
+        end tell
+
+        do script "cd '"$PWD"' && java -jar server/target/scala-2.12/server.jar -p 45681 -s localhost:45678"
+        tell front window
+            set custom title to "Server - 45681"
+            set bounds to (1000, 0, 1500, 600)
+        end tell
+
+        do script "cd '"$PWD"' && java -jar server/target/scala-2.12/server.jar -p 45682 -s localhost:45678"
+        tell front window
+            set custom title to "Server - 45682"
+            set bounds to (1200, 0, 2000, 600)
+        end tell
+
+        delay 8
+
+        do script "cd '"$PWD"' && java -jar client/target/scala-2.12/client.jar -p 45690 -s localhost:45678"
+        tell front window
+            set custom title to "Client - 456790"
+            set bounds to (0, 600, 500, 1200)
+        end tell
+
+        do script "cd '"$PWD"' && java -jar client/target/scala-2.12/client.jar -p 45691 -s localhost:45678"
+        tell front window
+            set custom title to "Client - 456791"
+            set bounds to (500, 600, 1000, 1200)
+        end tell
+    end tell'
+
+
+
+
